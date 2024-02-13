@@ -1,0 +1,10 @@
+{
+  "music_disc.cxk_music": {
+    "sounds": [
+      {
+        "name": "music_disc/cxk_music",
+        "stream": true
+      }
+    ]
+  }
+}

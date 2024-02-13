@@ -1,0 +1,77 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"2": "modid:block/qiqi",
+		"3": "modid:block/siha"
+	},
+	"elements": [
+		{
+			"from": [
+				0,
+				0,
+				0
+			],
+			"to": [
+				16,
+				16,
+				16
+			],
+			"faces": {
+				"north": {
+					"texture": "#3",
+					"uv": [
+						0,
+						0.26667,
+						16,
+						15.73333
+					]
+				},
+				"east": {
+					"texture": "#3",
+					"uv": [
+						0,
+						0.26667,
+						16,
+						16
+					]
+				},
+				"south": {
+					"texture": "#3",
+					"uv": [
+						0,
+						0.26667,
+						16,
+						16
+					]
+				},
+				"west": {
+					"texture": "#3",
+					"uv": [
+						0,
+						0.26667,
+						16,
+						15.73333
+					]
+				},
+				"up": {
+					"texture": "#2",
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					]
+				},
+				"down": {
+					"texture": "#2",
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					]
+				}
+			}
+		}
+	]
+}

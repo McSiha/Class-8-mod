@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "misc",
+  "ingredient": {
+    "item": "modid:test"
+  },
+  "result": "modid:watch_piece",
+  "experience": 8,
+  "cookingtime": 114
+}

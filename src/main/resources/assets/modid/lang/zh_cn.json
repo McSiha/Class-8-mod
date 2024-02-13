@@ -1,0 +1,13 @@
+{
+  "item.modid.watch": "手表",
+  "item.modid.ench_gold_watch": "附魔金手表",
+  "item.modid.shou_ze": "守则",
+  "item.modid.watch_piece": "手表碎片",
+  "item.modid.watch_sword": "手表剑",
+  "itemGroup.modid.mod_group": "模组物品集",
+  "enchantment.modid.blood": "出血",
+  "enchantment.modid.bleeding_blade": "血之利刃",
+  "effect.modid.blood": "流血",
+  "block.modid.test": "手表残骸",
+  "item.modid.chest_monster_spawn_egg": "箱子怪刷怪蛋"
+}
