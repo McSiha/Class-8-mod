@@ -1,8 +1,8 @@
-# Fabric Example Mod
+# Class-8 Mod
 
 ## Setup
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+For setup instructions please see the [my Bilibili page]((https://space.bilibili.com/1714350503?spm_id_from=333.1007.0.0)) that relates to the IDE that you are using.
 
 ## License
 
