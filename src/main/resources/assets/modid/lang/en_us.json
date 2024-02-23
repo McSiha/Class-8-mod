@@ -5,8 +5,20 @@
   "item.modid.watch_piece": "Watch Piece",
   "item.modid.watch_sword": "Watch Sword",
   "item.modid.chest_monster_spawn_egg": "Chest Monster Spawn Egg",
+  "item.modid.watch_pick_axe": "Watch Pick Axe",
+
   "itemGroup.modid.mod_group": "Mod Group",
+
   "enchantment.modid": "Bleeding Blade",
+
   "effect.modid.blood": "Bleeding",
-  "block.modid.test": "Watch Piece"
+
+  "block.modid.test": "Watch Piece",
+
+  "item.modid.music_disc_cxk": "Chicken You Are So Beautiful Music Disc",
+  "subtitles.modid.cxk_music": "Chicken You Are So Beautiful - CXK",
+  "item.modid.music_disc_cxk.desc": "Chicken You Are So Beautiful - CXK",
+
+  "advancements.watch.root.description": "Eat a watch",
+  "advancements.watch.root.title": "Is it the white worm's strength?"
 }

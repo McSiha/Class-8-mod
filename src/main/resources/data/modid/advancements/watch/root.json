@@ -1,0 +1,36 @@
+{
+    "criteria": {
+        "ate_watch": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "items":[
+                        "modid:watch"
+                    ]
+                }
+            }
+        }
+    },
+    "display": {
+        "announce_to_chat": true,
+        "background": "modid:textures/gui/advancements/watch.png",
+        "description": {
+            "translate": "advancements.watch.root.description"
+        },
+        "frame": "challenge",
+        "hidden": false,
+        "icon": {
+            "item": "modid:watch"
+        },
+        "show_toast": true,
+        "title": {
+            "translate": "advancements.watch.root.title"
+        }
+    },
+    "requirements": [
+            ["ate_watch"]
+    ],
+    "rewards": {
+        "experience": 114
+    }
+}

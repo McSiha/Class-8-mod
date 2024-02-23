@@ -1,8 +1,20 @@
 {
   "music_disc.cxk_music": {
+    "category": "record",
+    "subtitle": "subtitles.modid.cxk_music",
     "sounds": [
       {
-        "name": "music_disc/cxk_music",
+        "name": "modid:music_disc/cxk_music",
+        "stream": true
+      }
+    ]
+  },
+  "music.ivor_theme":{
+    "category": "record",
+    "subtitle": "subtitles.modid.ivor_theme",
+    "sounds": [
+      {
+        "name": "modid:music/ivor_theme",
         "stream": true
       }
     ]

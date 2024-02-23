@@ -3,11 +3,12 @@ package net.fabricmc.example;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.example.Enchant.Bleeding_blade;
 import net.fabricmc.example.Item.Item;
+import net.fabricmc.example.Item.tools.pick_axe.Watch_Pick_Axe;
 import net.fabricmc.example.Item.weapons.watch_sword;
 import net.fabricmc.example.block.TEST_SihaModTestBlock;
 import net.fabricmc.example.effects.BLOOD;
 import net.fabricmc.example.entity.Chest_Monster;
-import net.fabricmc.example.sound.Sounds;
+import net.fabricmc.example.sound.music_disc;
 import net.fabricmc.example.world.structure.laoda_temple;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -29,10 +30,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.GenerationStep;
@@ -40,6 +38,9 @@ import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.structure.StructureType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static net.fabricmc.example.sound.Sounds.CXK_MUSIC;
+import static net.fabricmc.example.sound.Sounds.MY_SOUND_ID;
 
 public class ExampleMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -50,8 +51,6 @@ public class ExampleMod implements ModInitializer {
 	public static final String Mod_Name = "Class 8 Mod";
 	//食物引用
 	public static final net.minecraft.item.Item WATCH = new net.minecraft.item.Item(new FabricItemSettings().food(Item.WATCH));	//手表
-	//基尼太美唱片
-	public static final net.minecraft.item.Item MUSIC_DISC_CXK = new MusicDiscItem(13, Sounds.CXK_MUSIC, new net.minecraft.item.Item.Settings().maxCount(1).rarity(Rarity.RARE), 149);
 	public static final net.minecraft.item.Item ENCH_GOLD_WATCH = new net.minecraft.item.Item(new FabricItemSettings().food(Item.ENCH_GOLD_WATCH)); //附魔金手表
 	public static final net.minecraft.item.Item SHOU_ZE = new net.minecraft.item.Item(new FabricItemSettings().food(Item.SHOU_ZE));  //守则
 	public static final ItemGroup MOD_GROUP = FabricItemGroup.builder(new Identifier("modid","mod_group")).icon(() -> new ItemStack(WATCH)).build();
@@ -64,6 +63,8 @@ public class ExampleMod implements ModInitializer {
 	public static final net.minecraft.item.Item WATCH_PIECE = new net.minecraft.item.Item(new FabricItemSettings());
 	//手表剑
 	public static ToolItem WATCH_SWORD = new SwordItem(watch_sword.INSTANCE, 4, 3F, new net.minecraft.item.Item.Settings());
+	//手表稿
+	public static final ToolItem WATCH_PICK_AXE = new Watch_Pick_Axe(1, 3F, new FabricItemSettings().maxCount(1));
 	//TEST箱子怪实体
 	public static final EntityType<Chest_Monster> CHEST_MONSTER = Registry.register(
 			Registries.ENTITY_TYPE,
@@ -75,6 +76,9 @@ public class ExampleMod implements ModInitializer {
 	public static  StructureType<laoda_temple> LAODA_TEMPLE;
 	@Override
 	public void onInitialize() {
+		//music
+		Registry.register(Registries.SOUND_EVENT, MY_SOUND_ID, CXK_MUSIC);
+
 		//Watch主程序注册
 		Registry.register(Registries.ITEM, new Identifier("modid","watch"), WATCH);
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(content -> {
@@ -112,9 +116,6 @@ public class ExampleMod implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(MOD_GROUP).register(content -> {
 			content.add(WATCH_SWORD);
 		});
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> {
-			content.addAfter(Items.NETHERITE_SWORD, WATCH_SWORD);
-		});
 		//远古手表对应物品注册
 		Registry.register(Registries.ITEM, new Identifier("modid", "test"), new BlockItem(TEST, new FabricItemSettings()));
 		ItemGroupEvents.modifyEntriesEvent(MOD_GROUP).register(content -> {
@@ -128,11 +129,16 @@ public class ExampleMod implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> {
 			content.addAfter(Items.WARDEN_SPAWN_EGG, CHEST_MONSTER_SPAWN_EGG);
 		});
-		//基尼太美
-		Registry.register(Registries.ITEM, new Identifier("modid", "music_disc_cxk"), MUSIC_DISC_CXK);
-		ItemGroupEvents.modifyEntriesEvent(MOD_GROUP).register(content -> {
-			content.addAfter(TEST, MUSIC_DISC_CXK);
+		//手表稿
+		Registry.register(Registries.ITEM, new Identifier("modid", "watch_pick_axe"), WATCH_PICK_AXE);
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+			content.addAfter(Items.NETHERITE_PICKAXE, CHEST_MONSTER_SPAWN_EGG);
 		});
+		ItemGroupEvents.modifyEntriesEvent(MOD_GROUP).register(content -> {
+			content.add(WATCH_PICK_AXE);
+		});
+		//鸡你太美唱片
+		music_disc.regMusicDisc();
 
 		//Mod_Item物品组注册
 		ItemGroupEvents.modifyEntriesEvent(MOD_GROUP).register(content -> {
@@ -170,5 +176,6 @@ public class ExampleMod implements ModInitializer {
 
 		//牢大神殿
 		LAODA_TEMPLE = Registry.register(Registries.STRUCTURE_TYPE, new Identifier("modid", "laoda_temple"), () -> laoda_temple.CODEC);
+
 	}
 }

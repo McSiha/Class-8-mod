@@ -4,10 +4,24 @@
   "item.modid.shou_ze": "守则",
   "item.modid.watch_piece": "手表碎片",
   "item.modid.watch_sword": "手表剑",
+  "item.modid.watch_pick_axe": "§f§k§a§b§3手表稿§f§k§a§b§3",
+
   "itemGroup.modid.mod_group": "模组物品集",
-  "enchantment.modid.blood": "出血",
+
   "enchantment.modid.bleeding_blade": "血之利刃",
+
   "effect.modid.blood": "流血",
+
   "block.modid.test": "手表残骸",
-  "item.modid.chest_monster_spawn_egg": "箱子怪刷怪蛋"
+
+  "item.modid.chest_monster_spawn_egg": "箱子怪刷怪蛋",
+
+  "item.modid.music_disc_cxk": "只因你太美音乐唱片",
+  "subtitles.modid.cxk_music": "只因你太美 - CXK",
+  "item.modid.music_disc_cxk.desc": "只因你太美 - CXK",
+  "enchantment.modid": "Bleeding Blade",
+
+  "advancements.watch.root.description": "吃掉一个手表",
+  "advancements.watch.root.title": "手表虫且，归位！！！"
+
 }
